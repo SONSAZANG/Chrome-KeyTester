@@ -1,6 +1,6 @@
 document.addEventListener('keydown', (event) => {
     console.log('Key pressed:', event.key);
-    
+    event.preventDefault();
     const keyElement = document.getElementById(`key${event.key.toUpperCase()}`);
     if (keyElement && !keyElement.classList.contains('pressed')) {
       keyElement.classList.add('pressed');
