@@ -1,19 +1,33 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #eee;
+}
+
+.keyboard-layout {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: rgba(236, 240, 241, 1);
+    width: 1000px;
+    height: 400px;
 }
 
 h1 {
     font-size: 24px;
 }
 
-/* Keyboard layout container */
 .keyboard-layout {
     display: flex;
     flex-direction: column;
@@ -21,30 +35,53 @@ h1 {
     gap: 5px;
 }
 
-/* Key rows */
 .key-row {
     display: flex;
-    justify-content: center;
-    gap: 2px;
+    gap: 5px;
 }
 
-/* Individual keys */
 .key {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    justify-content: center;
     border: 1px solid #ccc;
     border-radius: 3px;
-    background-color: #f5f5f5;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+    font-size: 14px;
+    cursor: pointer;
     user-select: none;
-    cursor: default;
+    transition: background-color 0.2s;
+    color: #333;
 }
 
-/* Pressed key */
 .key.pressed {
-    background-color: #ccc;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #c0c0c0;
+}
+
+/* Olivia color scheme */
+.key.alphanumeric,
+.key.function {
+    background-color: #4b4b4b;
+    color: #f7e6d9;
+}
+
+.key.modifier {
+    background-color: #d4b4a4;
+    color: #4b4b4b;
+}
+
+.key.blank {
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+.key.pressed.alphanumeric,
+.key.pressed.function {
+    background-color: #696969;
+    color: #f7e6d9;
+}
+
+.key.pressed.modifier {
+    background-color: #c08a74;
+    color: #4b4b4b;
 }
